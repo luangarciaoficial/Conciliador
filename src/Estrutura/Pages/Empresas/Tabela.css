@@ -1,0 +1,33 @@
+.BoxTabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.BoxTabela th, .BoxTabela td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    word-break: break-all; /* Adicione esta linha para quebrar o texto longo */
+}
+
+.BoxTabela th {
+    background-color: #f2f2f2;
+}
+
+.BoxTabela tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.BoxTabela tr:hover {
+    background-color: #ddd;
+}
+
+.BoxTabela button {
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+}

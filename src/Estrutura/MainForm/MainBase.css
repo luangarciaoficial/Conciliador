@@ -1,0 +1,36 @@
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "logo topbar"
+        "sidebar content";
+    height: 100vh;
+}
+
+.logo {
+    grid-area: logo;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo > .imageLogo {
+    width: 190px;
+}
+
+.top-bar {
+    grid-area: topbar;
+    height: 10vh;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    width: 250px;
+}
+
+.content {
+    grid-area: content;
+    overflow-y: auto;
+}

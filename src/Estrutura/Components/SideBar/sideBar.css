@@ -1,0 +1,38 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menuSelect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: -40px;
+    margin-top: 20px;
+}
+
+.SelectedMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 70%;
+    transition: 0.3s ease;
+    height: 35px;
+}
+
+.SelectedMenu > p {
+    font-weight: 700;
+}
+
+.SelectedMenu > p > svg {
+    margin-right: 15px;
+    font-size: 23px;
+}
+
+.SelectedMenu:hover {
+    cursor: pointer;
+    border-radius: 5px;
+}

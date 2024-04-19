@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./Estrutura/Auth/Login/index.tsx";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routers } from "./Estrutura/Routers/MenuRouters/index.tsx";
+import CriarEmpresa from "./Estrutura/Pages/Empresas/CriarEmpresa/index.tsx";
+import ListarEmpresa from "./Estrutura/Pages/Empresas/ListarEmpresas/index.tsx";
+import CriarUsuarios from "./Estrutura/Pages/Usuarios/CriarUsuario/index.tsx";
+import ListarUsuarios from "./Estrutura/Pages/Usuarios/ListarUsuario/index.tsx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/login' element={<Login />} />
+        <Route index='/Empresas/criarempresa' path='/Empresas/criarempresa' element={<Routers path='/Empresas/criarempresa' children={<CriarEmpresa />} />} />
+        <Route index='/Empresas/listarempresas' path='/Empresas/listarempresas' element={<Routers path='/Empresas/listarempresas' children={<ListarEmpresa />} />} />
+        <Route index='/Usuarios/criarusuario' path='/Usuarios/criarusuario' element={<Routers path='/Usuarios/criarusuario' children={<CriarUsuarios/>} />} />
+        <Route index='/Usuarios/listarusuario' path='/Usuarios/listarusuario' element={<Routers path='/Usuarios/listarusuario' children={<ListarUsuarios/>} />} />
+      </Routes>
+    </Router>
   );
 }
 
