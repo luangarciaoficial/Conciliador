@@ -10,17 +10,17 @@ interface params {
 
 const MainBase: React.FC<params> = ({ children }) => {
 
-    const { colorFundo, colorFundoBox } = useTema()
+    const { colorFundo, colorFundoBox, colorBorda } = useTema()
 
     return (
         <div className="container">
-            <div className='logo' style={{ backgroundColor: colorFundo }}>
+            <div className='logo' style={{ backgroundColor: colorFundo, borderColor: colorBorda }}>
                 <img className='imageLogo' src="/img/IMGLogo.png" alt="Logo" />
             </div>
-            <div className="top-bar" style={{ backgroundColor: colorFundo  }}>
+            <div className="top-bar" style={{ backgroundColor: colorFundo, borderColor: colorBorda  }}>
                 <TopBar />
             </div>
-            <div className="sidebar" style={{ backgroundColor: colorFundo }}>
+            <div className="sidebar" style={{ backgroundColor: colorFundo, borderColor: colorBorda }}>
                 <SideBar />
             </div>
             <div className="content" style={{ backgroundColor: colorFundoBox }}>{children}</div>

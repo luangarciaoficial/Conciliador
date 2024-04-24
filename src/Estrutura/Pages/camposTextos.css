@@ -1,0 +1,120 @@
+.divTexto {
+    padding: 20px;
+    display: flex;
+}
+
+.CampoTexto,
+.CampoTextoDireita {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.CampoTexto > input,
+.CampoTextoDireita > input {
+    border: 1px solid;
+    border-radius: 5px;
+    height: 25px;
+    padding-left: 10px;
+}
+
+.CampoTexto > input {
+    margin-right: 10px;
+}
+
+.botaoCadastrar {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.botaoCadastrar > button {
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.divSelectEmpUser {
+    display: flex;
+    flex-direction: column;
+}
+
+.separacaoDivEmpresaUser {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.selecionarEmpresaUsuario {
+    width: 40%;
+}
+
+.selecionarEmpresaUsuario > input {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.iconAddEmpresaUser {
+    width: 25px;
+    height: 100%;
+    margin-left: 10px;
+    cursor: pointer;
+    color: green;
+}
+
+.dropdown {
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    max-height: 300px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px 5px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.selecionarEmpresaUsuario {
+    position: relative;
+    display: inline-block;
+}
+
+.boxCadastro {
+    position: relative;
+}
+
+.separacaoDivEmpresaUser {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.dropdownItem {
+    padding: 8px 10px; /* Espaçamento interno */
+    cursor: pointer; /* Mostra que é clicável */
+}
+
+.IconRemoverDaLista {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    color: red;
+}
+
+@media screen and (max-width: 1100px) {
+    .divTexto {
+        flex-wrap: wrap;
+    }
+
+    .CampoTexto {
+        width: 100%;
+    }
+
+    .CampoTexto > input {
+        margin-right: 0;
+    }
+}

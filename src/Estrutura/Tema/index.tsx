@@ -6,8 +6,8 @@ interface TemaType {
     toggleTema: () => void;
     colorFundo: string;
     colorFundoBox: string;
-    colorFundoOptions: string;
     colorTextos: string;
+    colorTextoBox: string
     redTexto: string;
     colorTextosTransparentes: string;
     colorIcons: string;
@@ -21,6 +21,9 @@ interface TemaType {
     colorActiveText: string;
     colorActiveBorder: string;
     colorTextBotoes: string
+    colorTabela: string
+    colorLinhasTabela: string
+    colorTextoTabela: string
 }
 
 const TemaContext = createContext<TemaType | undefined>(undefined);
@@ -35,23 +38,27 @@ export const useTema = (): TemaType => {
 
 export const TemaProvider: React.FC = ({ children }) => {
     const [selecionarTema, setSelecionarTema] = useState<boolean>(true);
-    const [colorFundo, setColorFundo] = useState('white');
-    const [colorFundoBox, setColorFundoBox] = useState('#f7f7f7f6');
-    const [colorFundoOptions, setColorFundoOption] = useState('white')
-    const [colorTextos, setColorTextos] = useState('black');
-    const [redTexto, setRedTexto] = useState('#bb2528');
-    const [colorTextosTransparentes, setColorTextosTransparentes] = useState('rgba(0, 0, 0, 0.5)');
-    const [colorIcons, setColorIcons] = useState('black');
-    const [redIcons, setRedIcons] = useState('#bb2528');
-    const [colorIconsTransparente, setColorIconsTransparente] = useState('rgba(0, 0, 0, 0.5)');
-    const [colorBorda, setColorBorda] = useState('rgba(0, 0, 0, 0.3)');
-    const [colorBotoes, setColorBotoes] = useState('#250e62');
-    const [colorTextBotoes ,setColorTextBotoes] = useState('white')
-    const [colorItemsMenu, setColorItemsMenu] = useState('white')
-    const [colorActiveMenu, setColorActiveMenu] = useState('#e8ffff')
-    const [colorHover, setColorHover] = useState("#c9e7ff")
-    const [colorActiveText, setColorActiveText] = useState('#e8ffff')
-    const [colorActiveBorder, setColorActiveBorder] = useState('#e8ffff')
+
+    const [colorFundo, setColorFundo] = useState('');
+    const [colorFundoBox, setColorFundoBox] = useState('');
+    const [colorTextos, setColorTextos] = useState('');
+    const [colorTextoBox, setColorTextoBox] = useState('')
+    const [redTexto, setRedTexto] = useState('');
+    const [colorTextosTransparentes, setColorTextosTransparentes] = useState('');
+    const [colorIcons, setColorIcons] = useState('');
+    const [redIcons, setRedIcons] = useState('');
+    const [colorIconsTransparente, setColorIconsTransparente] = useState('');
+    const [colorBorda, setColorBorda] = useState('');
+    const [colorBotoes, setColorBotoes] = useState('');
+    const [colorTextBotoes, setColorTextBotoes] = useState('')
+    const [colorItemsMenu, setColorItemsMenu] = useState('')
+    const [colorActiveMenu, setColorActiveMenu] = useState('')
+    const [colorHover, setColorHover] = useState('')
+    const [colorActiveText, setColorActiveText] = useState('')
+    const [colorActiveBorder, setColorActiveBorder] = useState('')
+    const [colorTabela, setColorTabela] = useState('')
+    const [colorLinhasTabela, setColorLinhasTabela] = useState('')
+    const [colorTextoTabela, setColorTextoTabela] = useState('')
 
     const toggleTema = () => {
         setSelecionarTema(!selecionarTema);
@@ -62,9 +69,9 @@ export const TemaProvider: React.FC = ({ children }) => {
         toggleTema,
         colorFundo,
         colorFundoBox,
-        colorFundoOptions,
         colorTextos,
         redTexto,
+        colorTextoBox,
         colorTextosTransparentes,
         colorIcons,
         redIcons,
@@ -76,7 +83,10 @@ export const TemaProvider: React.FC = ({ children }) => {
         colorHover,
         colorActiveText,
         colorActiveBorder,
-        colorTextBotoes
+        colorTextBotoes,
+        colorTabela,
+        colorLinhasTabela,
+        colorTextoTabela
     };
 
     useEffect(() => {
@@ -88,16 +98,16 @@ export const TemaProvider: React.FC = ({ children }) => {
     }, [selecionarTema]);
 
     const light = () => {
-        setColorFundo('white')
-        setColorFundoBox('#f7f7f7f6')
-        setColorFundoOption('white')
+        setColorFundo('#f7f7f7f6')
+        setColorFundoBox('white')
         setColorTextos('black')
+        setColorTextoBox('black')
         setRedTexto('#bb2528')
-        setColorTextosTransparentes('rgba(0, 0, 0, 0.5)')
+        setColorTextosTransparentes('black')
         setColorIcons('black')
         setRedIcons('#bb2528')
-        setColorIconsTransparente('rgba(0, 0, 0, 0.5)')
-        setColorBorda('rgba(0, 0, 0, 0.3)')
+        setColorIconsTransparente('black')
+        setColorBorda('black')
         setColorBotoes('#250e62')
         setColorTextBotoes('white')
         setColorItemsMenu('white')
@@ -105,22 +115,32 @@ export const TemaProvider: React.FC = ({ children }) => {
         setColorHover('#c9e7ff')
         setColorActiveText('black')
         setColorActiveBorder('aqua')
+        setColorTabela('#c4c4c4')
+        setColorLinhasTabela('#f7f7f7f6')
+        setColorTextoTabela('black')
     };
 
     const dark = () => {
         setColorFundo('black')
-        setColorFundoBox('#c4c4c4')
+        setColorFundoBox('black')
         setColorTextos('white')
-        setRedTexto('#bb2528')
+        setColorTextoBox('white')
+        setRedTexto('red')
         setColorTextosTransparentes('white')
         setColorIcons('white')
-        setRedIcons('#bb2528')
+        setRedIcons('red')
         setColorIconsTransparente('white')
         setColorBorda('white')
-        setColorBotoes('black')
-        setColorItemsMenu('black')
-        setColorActiveMenu('#c4c4c4')
+        setColorBotoes('white')
+        setColorTextBotoes('black')
+        setColorItemsMenu('white')
+        setColorActiveMenu('#e8ffff')
         setColorHover('#c9e7ff')
+        setColorActiveText('black')
+        setColorActiveBorder('aqua')
+        setColorTabela('white')
+        setColorLinhasTabela('white')
+        setColorTextoTabela('black')
     };
 
     return (
